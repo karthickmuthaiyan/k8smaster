@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    run: nginx-pod
+  name: messaging-service
+spec:
+  ports:
+  - port: 6379
+    protocol: TCP
+    targetPort: 80
+  selector:
+    run: nginx-pod

@@ -1,0 +1,785 @@
+apiVersion: v1
+items:
+- apiVersion: v1
+  kind: Pod
+  metadata:
+    creationTimestamp: "2022-01-05T04:27:06Z"
+    generateName: hr-web-app-6f6fc9697-
+    labels:
+      app: hr-web-app
+      pod-template-hash: 6f6fc9697
+    name: hr-web-app-6f6fc9697-bgkt2
+    namespace: default
+    ownerReferences:
+    - apiVersion: apps/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: ReplicaSet
+      name: hr-web-app-6f6fc9697
+      uid: 49e01466-0d3b-4318-84d5-4a0224c9ac23
+    resourceVersion: "102344"
+    uid: c7f953d5-3315-423a-876a-7729b0ebfea6
+  spec:
+    containers:
+    - image: nginx
+      imagePullPolicy: Always
+      name: nginx
+      resources: {}
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: kube-api-access-zb9q6
+        readOnly: true
+    dnsPolicy: ClusterFirst
+    enableServiceLinks: true
+    nodeName: worker01
+    preemptionPolicy: PreemptLowerPriority
+    priority: 0
+    restartPolicy: Always
+    schedulerName: default-scheduler
+    securityContext: {}
+    serviceAccount: default
+    serviceAccountName: default
+    terminationGracePeriodSeconds: 30
+    tolerations:
+    - effect: NoExecute
+      key: node.kubernetes.io/not-ready
+      operator: Exists
+      tolerationSeconds: 300
+    - effect: NoExecute
+      key: node.kubernetes.io/unreachable
+      operator: Exists
+      tolerationSeconds: 300
+    volumes:
+    - name: kube-api-access-zb9q6
+      projected:
+        defaultMode: 420
+        sources:
+        - serviceAccountToken:
+            expirationSeconds: 3607
+            path: token
+        - configMap:
+            items:
+            - key: ca.crt
+              path: ca.crt
+            name: kube-root-ca.crt
+        - downwardAPI:
+            items:
+            - fieldRef:
+                apiVersion: v1
+                fieldPath: metadata.namespace
+              path: namespace
+  status:
+    conditions:
+    - lastProbeTime: null
+      lastTransitionTime: "2022-01-05T04:27:06Z"
+      status: "True"
+      type: Initialized
+    - lastProbeTime: null
+      lastTransitionTime: "2022-01-05T04:27:15Z"
+      status: "True"
+      type: Ready
+    - lastProbeTime: null
+      lastTransitionTime: "2022-01-05T04:27:15Z"
+      status: "True"
+      type: ContainersReady
+    - lastProbeTime: null
+      lastTransitionTime: "2022-01-05T04:27:06Z"
+      status: "True"
+      type: PodScheduled
+    containerStatuses:
+    - containerID: docker://7237103c799554b39bd047aba510c0e06819c41a72fcd7c1f1764782f69d30cf
+      image: nginx:latest
+      imageID: docker-pullable://nginx@sha256:0d17b565c37bcbd895e9d92315a05c1c3c9a29f762b011a10c54a66cd53c9b31
+      lastState: {}
+      name: nginx
+      ready: true
+      restartCount: 0
+      started: true
+      state:
+        running:
+          startedAt: "2022-01-05T04:27:14Z"
+    hostIP: 192.168.1.55
+    phase: Running
+    podIP: 10.44.0.3
+    podIPs:
+    - ip: 10.44.0.3
+    qosClass: BestEffort
+    startTime: "2022-01-05T04:27:06Z"
+- apiVersion: v1
+  kind: Pod
+  metadata:
+    creationTimestamp: "2022-01-05T04:27:06Z"
+    generateName: hr-web-app-6f6fc9697-
+    labels:
+      app: hr-web-app
+      pod-template-hash: 6f6fc9697
+    name: hr-web-app-6f6fc9697-g9f47
+    namespace: default
+    ownerReferences:
+    - apiVersion: apps/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: ReplicaSet
+      name: hr-web-app-6f6fc9697
+      uid: 49e01466-0d3b-4318-84d5-4a0224c9ac23
+    resourceVersion: "102350"
+    uid: f0ea845a-f265-47cd-aace-fc461ff7c296
+  spec:
+    containers:
+    - image: nginx
+      imagePullPolicy: Always
+      name: nginx
+      resources: {}
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: kube-api-access-h5w82
+        readOnly: true
+    dnsPolicy: ClusterFirst
+    enableServiceLinks: true
+    nodeName: worker01
+    preemptionPolicy: PreemptLowerPriority
+    priority: 0
+    restartPolicy: Always
+    schedulerName: default-scheduler
+    securityContext: {}
+    serviceAccount: default
+    serviceAccountName: default
+    terminationGracePeriodSeconds: 30
+    tolerations:
+    - effect: NoExecute
+      key: node.kubernetes.io/not-ready
+      operator: Exists
+      tolerationSeconds: 300
+    - effect: NoExecute
+      key: node.kubernetes.io/unreachable
+      operator: Exists
+      tolerationSeconds: 300
+    volumes:
+    - name: kube-api-access-h5w82
+      projected:
+        defaultMode: 420
+        sources:
+        - serviceAccountToken:
+            expirationSeconds: 3607
+            path: token
+        - configMap:
+            items:
+            - key: ca.crt
+              path: ca.crt
+            name: kube-root-ca.crt
+        - downwardAPI:
+            items:
+            - fieldRef:
+                apiVersion: v1
+                fieldPath: metadata.namespace
+              path: namespace
+  status:
+    conditions:
+    - lastProbeTime: null
+      lastTransitionTime: "2022-01-05T04:27:06Z"
+      status: "True"
+      type: Initialized
+    - lastProbeTime: null
+      lastTransitionTime: "2022-01-05T04:27:16Z"
+      status: "True"
+      type: Ready
+    - lastProbeTime: null
+      lastTransitionTime: "2022-01-05T04:27:16Z"
+      status: "True"
+      type: ContainersReady
+    - lastProbeTime: null
+      lastTransitionTime: "2022-01-05T04:27:06Z"
+      status: "True"
+      type: PodScheduled
+    containerStatuses:
+    - containerID: docker://f2f1badaa0f0c25953cb4e32130009821d204a082fb49f4da44a494ab2ee56de
+      image: nginx:latest
+      imageID: docker-pullable://nginx@sha256:0d17b565c37bcbd895e9d92315a05c1c3c9a29f762b011a10c54a66cd53c9b31
+      lastState: {}
+      name: nginx
+      ready: true
+      restartCount: 0
+      started: true
+      state:
+        running:
+          startedAt: "2022-01-05T04:27:16Z"
+    hostIP: 192.168.1.55
+    phase: Running
+    podIP: 10.44.0.4
+    podIPs:
+    - ip: 10.44.0.4
+    qosClass: BestEffort
+    startTime: "2022-01-05T04:27:06Z"
+- apiVersion: v1
+  kind: Pod
+  metadata:
+    creationTimestamp: "2022-01-05T04:05:19Z"
+    labels:
+      run: nginx-pod
+    name: nginx-pod
+    namespace: default
+    resourceVersion: "100802"
+    uid: acffa7bc-bf4f-418e-92d2-3bbe2969a55e
+  spec:
+    containers:
+    - image: nginx:alpine
+      imagePullPolicy: IfNotPresent
+      name: nginx-pod
+      resources: {}
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: kube-api-access-8nbvf
+        readOnly: true
+    dnsPolicy: ClusterFirst
+    enableServiceLinks: true
+    nodeName: worker01
+    preemptionPolicy: PreemptLowerPriority
+    priority: 0
+    restartPolicy: Always
+    schedulerName: default-scheduler
+    securityContext: {}
+    serviceAccount: default
+    serviceAccountName: default
+    terminationGracePeriodSeconds: 30
+    tolerations:
+    - effect: NoExecute
+      key: node.kubernetes.io/not-ready
+      operator: Exists
+      tolerationSeconds: 300
+    - effect: NoExecute
+      key: node.kubernetes.io/unreachable
+      operator: Exists
+      tolerationSeconds: 300
+    volumes:
+    - name: kube-api-access-8nbvf
+      projected:
+        defaultMode: 420
+        sources:
+        - serviceAccountToken:
+            expirationSeconds: 3607
+            path: token
+        - configMap:
+            items:
+            - key: ca.crt
+              path: ca.crt
+            name: kube-root-ca.crt
+        - downwardAPI:
+            items:
+            - fieldRef:
+                apiVersion: v1
+                fieldPath: metadata.namespace
+              path: namespace
+  status:
+    conditions:
+    - lastProbeTime: null
+      lastTransitionTime: "2022-01-05T04:08:03Z"
+      status: "True"
+      type: Initialized
+    - lastProbeTime: null
+      lastTransitionTime: "2022-01-05T04:08:13Z"
+      status: "True"
+      type: Ready
+    - lastProbeTime: null
+      lastTransitionTime: "2022-01-05T04:08:13Z"
+      status: "True"
+      type: ContainersReady
+    - lastProbeTime: null
+      lastTransitionTime: "2022-01-05T04:08:02Z"
+      status: "True"
+      type: PodScheduled
+    containerStatuses:
+    - containerID: docker://6207d09d3af7e80a7caded8c89d201c76f5f1b9670490e7cd185a600a83a81dc
+      image: nginx:alpine
+      imageID: docker-pullable://nginx@sha256:eb05700fe7baa6890b74278e39b66b2ed1326831f9ec3ed4bdc6361a4ac2f333
+      lastState: {}
+      name: nginx-pod
+      ready: true
+      restartCount: 0
+      started: true
+      state:
+        running:
+          startedAt: "2022-01-05T04:08:12Z"
+    hostIP: 192.168.1.55
+    phase: Running
+    podIP: 10.44.0.1
+    podIPs:
+    - ip: 10.44.0.1
+    qosClass: BestEffort
+    startTime: "2022-01-05T04:08:03Z"
+- apiVersion: v1
+  kind: Pod
+  metadata:
+    annotations:
+      kubernetes.io/config.hash: 276bf78511337fb492d0d64a16d4ea72
+      kubernetes.io/config.mirror: 276bf78511337fb492d0d64a16d4ea72
+      kubernetes.io/config.seen: "2022-01-04T22:48:33.654666053-06:00"
+      kubernetes.io/config.source: file
+    creationTimestamp: "2022-01-05T04:48:33Z"
+    labels:
+      run: static-busybox
+    name: static-busybox-master01
+    namespace: default
+    ownerReferences:
+    - apiVersion: v1
+      controller: true
+      kind: Node
+      name: master01
+      uid: 7a84bab0-634a-449e-9076-0205921b0a9e
+    resourceVersion: "117053"
+    uid: 5eab6cea-7d62-46e0-a222-3ebffb9c5b72
+  spec:
+    containers:
+    - command:
+      - sleep
+      - "1000"
+      image: busybox
+      imagePullPolicy: Always
+      name: static-busybox
+      resources: {}
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+    dnsPolicy: ClusterFirst
+    enableServiceLinks: true
+    nodeName: master01
+    preemptionPolicy: PreemptLowerPriority
+    priority: 0
+    restartPolicy: Always
+    schedulerName: default-scheduler
+    securityContext: {}
+    terminationGracePeriodSeconds: 30
+    tolerations:
+    - effect: NoExecute
+      operator: Exists
+  status:
+    conditions:
+    - lastProbeTime: null
+      lastTransitionTime: "2022-01-05T04:48:33Z"
+      status: "True"
+      type: Initialized
+    - lastProbeTime: null
+      lastTransitionTime: "2022-01-06T04:36:43Z"
+      status: "True"
+      type: Ready
+    - lastProbeTime: null
+      lastTransitionTime: "2022-01-06T04:36:43Z"
+      status: "True"
+      type: ContainersReady
+    - lastProbeTime: null
+      lastTransitionTime: "2022-01-05T04:48:33Z"
+      status: "True"
+      type: PodScheduled
+    containerStatuses:
+    - containerID: docker://ed3c36cac3ffb4ecf4cb623440402e0dc0bfc20fe08e2e6367fc3b5f20de4c3e
+      image: busybox:latest
+      imageID: docker-pullable://busybox@sha256:5acba83a746c7608ed544dc1533b87c737a0b0fb730301639a0179f9344b1678
+      lastState:
+        terminated:
+          containerID: docker://44ad5730208a5fbe74b5e0f44de1e30983fa9f0c5d7cc54dd47fac4af10f391d
+          exitCode: 0
+          finishedAt: "2022-01-06T04:36:39Z"
+          reason: Completed
+          startedAt: "2022-01-06T04:19:59Z"
+      name: static-busybox
+      ready: true
+      restartCount: 11
+      started: true
+      state:
+        running:
+          startedAt: "2022-01-06T04:36:42Z"
+    hostIP: 192.168.1.53
+    phase: Running
+    podIP: 10.32.0.4
+    podIPs:
+    - ip: 10.32.0.4
+    qosClass: BestEffort
+    startTime: "2022-01-05T04:48:33Z"
+- apiVersion: v1
+  kind: Pod
+  metadata:
+    creationTimestamp: "2022-01-06T04:32:09Z"
+    name: super-user-pod
+    namespace: default
+    resourceVersion: "116693"
+    uid: 643ecbb0-ef20-42dd-8438-d46ae78ea990
+  spec:
+    containers:
+    - command:
+      - sleep
+      - "4800"
+      image: busybox:1.28
+      imagePullPolicy: IfNotPresent
+      name: super-user-pod
+      resources: {}
+      securityContext:
+        capabilities:
+          add:
+          - SYS_TIME
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+      - mountPath: /demo
+        name: demo-dir
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: kube-api-access-7cltm
+        readOnly: true
+    dnsPolicy: ClusterFirst
+    enableServiceLinks: true
+    nodeName: worker01
+    preemptionPolicy: PreemptLowerPriority
+    priority: 0
+    restartPolicy: Always
+    schedulerName: default-scheduler
+    securityContext:
+      fsGroup: 2000
+      runAsGroup: 3000
+      runAsUser: 1000
+    serviceAccount: default
+    serviceAccountName: default
+    terminationGracePeriodSeconds: 30
+    tolerations:
+    - effect: NoExecute
+      key: node.kubernetes.io/not-ready
+      operator: Exists
+      tolerationSeconds: 300
+    - effect: NoExecute
+      key: node.kubernetes.io/unreachable
+      operator: Exists
+      tolerationSeconds: 300
+    volumes:
+    - emptyDir: {}
+      name: demo-dir
+    - name: kube-api-access-7cltm
+      projected:
+        defaultMode: 420
+        sources:
+        - serviceAccountToken:
+            expirationSeconds: 3607
+            path: token
+        - configMap:
+            items:
+            - key: ca.crt
+              path: ca.crt
+            name: kube-root-ca.crt
+        - downwardAPI:
+            items:
+            - fieldRef:
+                apiVersion: v1
+                fieldPath: metadata.namespace
+              path: namespace
+  status:
+    conditions:
+    - lastProbeTime: null
+      lastTransitionTime: "2022-01-06T04:32:09Z"
+      status: "True"
+      type: Initialized
+    - lastProbeTime: null
+      lastTransitionTime: "2022-01-06T04:32:11Z"
+      status: "True"
+      type: Ready
+    - lastProbeTime: null
+      lastTransitionTime: "2022-01-06T04:32:11Z"
+      status: "True"
+      type: ContainersReady
+    - lastProbeTime: null
+      lastTransitionTime: "2022-01-06T04:32:09Z"
+      status: "True"
+      type: PodScheduled
+    containerStatuses:
+    - containerID: docker://2570aa2d7fbd7f7aad73fed5b34b1a932433e7cfd99b9885383e6cb38f8af99e
+      image: busybox:1.28
+      imageID: docker-pullable://busybox@sha256:141c253bc4c3fd0a201d32dc1f493bcf3fff003b6df416dea4f41046e0f37d47
+      lastState: {}
+      name: super-user-pod
+      ready: true
+      restartCount: 0
+      started: true
+      state:
+        running:
+          startedAt: "2022-01-06T04:32:11Z"
+    hostIP: 192.168.1.55
+    phase: Running
+    podIP: 10.44.0.5
+    podIPs:
+    - ip: 10.44.0.5
+    qosClass: BestEffort
+    startTime: "2022-01-06T04:32:09Z"
+- apiVersion: v1
+  kind: Pod
+  metadata:
+    creationTimestamp: "2022-01-05T04:12:13Z"
+    labels:
+      tier: test_1
+    name: test
+    namespace: default
+    resourceVersion: "101132"
+    uid: a7fad530-442b-471f-b2b9-3deb69e9b8eb
+  spec:
+    containers:
+    - image: redis:alpine
+      imagePullPolicy: IfNotPresent
+      name: test
+      resources: {}
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: kube-api-access-lshth
+        readOnly: true
+    dnsPolicy: ClusterFirst
+    enableServiceLinks: true
+    nodeName: worker01
+    preemptionPolicy: PreemptLowerPriority
+    priority: 0
+    restartPolicy: Always
+    schedulerName: default-scheduler
+    securityContext: {}
+    serviceAccount: default
+    serviceAccountName: default
+    terminationGracePeriodSeconds: 30
+    tolerations:
+    - effect: NoExecute
+      key: node.kubernetes.io/not-ready
+      operator: Exists
+      tolerationSeconds: 300
+    - effect: NoExecute
+      key: node.kubernetes.io/unreachable
+      operator: Exists
+      tolerationSeconds: 300
+    volumes:
+    - name: kube-api-access-lshth
+      projected:
+        defaultMode: 420
+        sources:
+        - serviceAccountToken:
+            expirationSeconds: 3607
+            path: token
+        - configMap:
+            items:
+            - key: ca.crt
+              path: ca.crt
+            name: kube-root-ca.crt
+        - downwardAPI:
+            items:
+            - fieldRef:
+                apiVersion: v1
+                fieldPath: metadata.namespace
+              path: namespace
+  status:
+    conditions:
+    - lastProbeTime: null
+      lastTransitionTime: "2022-01-05T04:12:13Z"
+      status: "True"
+      type: Initialized
+    - lastProbeTime: null
+      lastTransitionTime: "2022-01-05T04:12:18Z"
+      status: "True"
+      type: Ready
+    - lastProbeTime: null
+      lastTransitionTime: "2022-01-05T04:12:18Z"
+      status: "True"
+      type: ContainersReady
+    - lastProbeTime: null
+      lastTransitionTime: "2022-01-05T04:12:13Z"
+      status: "True"
+      type: PodScheduled
+    containerStatuses:
+    - containerID: docker://f7db36eb3e7c426bf0108641050c330d428ce1c28c335fbca0ad357807175e15
+      image: redis:alpine
+      imageID: docker-pullable://redis@sha256:4bed291aa5efb9f0d77b76ff7d4ab71eee410962965d052552db1fb80576431d
+      lastState: {}
+      name: test
+      ready: true
+      restartCount: 0
+      started: true
+      state:
+        running:
+          startedAt: "2022-01-05T04:12:18Z"
+    hostIP: 192.168.1.55
+    phase: Running
+    podIP: 10.44.0.2
+    podIPs:
+    - ip: 10.44.0.2
+    qosClass: BestEffort
+    startTime: "2022-01-05T04:12:13Z"
+- apiVersion: v1
+  kind: Service
+  metadata:
+    creationTimestamp: "2022-01-05T05:02:32Z"
+    labels:
+      app: hr-web-app
+    name: hr-web-app-service
+    namespace: default
+    resourceVersion: "105223"
+    uid: 66bebb51-c2b8-4ef2-b517-7ba6e19f2f0a
+  spec:
+    clusterIP: 10.105.79.194
+    clusterIPs:
+    - 10.105.79.194
+    externalTrafficPolicy: Cluster
+    ipFamilies:
+    - IPv4
+    ipFamilyPolicy: SingleStack
+    ports:
+    - nodePort: 30082
+      port: 8080
+      protocol: TCP
+      targetPort: 80
+    selector:
+      app: hr-web-app
+    sessionAffinity: None
+    type: NodePort
+  status:
+    loadBalancer: {}
+- apiVersion: v1
+  kind: Service
+  metadata:
+    creationTimestamp: "2022-01-05T05:11:57Z"
+    labels:
+      run: nginx-pod
+    name: nginx-pod
+    namespace: default
+    resourceVersion: "105987"
+    uid: dabf774e-85c1-4e47-a8c2-2a25785e30c2
+  spec:
+    clusterIP: 10.105.22.125
+    clusterIPs:
+    - 10.105.22.125
+    ipFamilies:
+    - IPv4
+    ipFamilyPolicy: SingleStack
+    ports:
+    - port: 8080
+      protocol: TCP
+      targetPort: 80
+    selector:
+      run: nginx-pod
+    sessionAffinity: None
+    type: ClusterIP
+  status:
+    loadBalancer: {}
+- apiVersion: apps/v1
+  kind: Deployment
+  metadata:
+    annotations:
+      deployment.kubernetes.io/revision: "1"
+    creationTimestamp: "2022-01-05T04:27:06Z"
+    generation: 1
+    labels:
+      app: hr-web-app
+    name: hr-web-app
+    namespace: default
+    resourceVersion: "102352"
+    uid: f87ba582-a0cb-441d-aa7a-c91ba7de36dc
+  spec:
+    progressDeadlineSeconds: 600
+    replicas: 2
+    revisionHistoryLimit: 10
+    selector:
+      matchLabels:
+        app: hr-web-app
+    strategy:
+      rollingUpdate:
+        maxSurge: 25%
+        maxUnavailable: 25%
+      type: RollingUpdate
+    template:
+      metadata:
+        creationTimestamp: null
+        labels:
+          app: hr-web-app
+      spec:
+        containers:
+        - image: nginx
+          imagePullPolicy: Always
+          name: nginx
+          resources: {}
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+        dnsPolicy: ClusterFirst
+        restartPolicy: Always
+        schedulerName: default-scheduler
+        securityContext: {}
+        terminationGracePeriodSeconds: 30
+  status:
+    availableReplicas: 2
+    conditions:
+    - lastTransitionTime: "2022-01-05T04:27:16Z"
+      lastUpdateTime: "2022-01-05T04:27:16Z"
+      message: Deployment has minimum availability.
+      reason: MinimumReplicasAvailable
+      status: "True"
+      type: Available
+    - lastTransitionTime: "2022-01-05T04:27:06Z"
+      lastUpdateTime: "2022-01-05T04:27:16Z"
+      message: ReplicaSet "hr-web-app-6f6fc9697" has successfully progressed.
+      reason: NewReplicaSetAvailable
+      status: "True"
+      type: Progressing
+    observedGeneration: 1
+    readyReplicas: 2
+    replicas: 2
+    updatedReplicas: 2
+- apiVersion: apps/v1
+  kind: ReplicaSet
+  metadata:
+    annotations:
+      deployment.kubernetes.io/desired-replicas: "2"
+      deployment.kubernetes.io/max-replicas: "3"
+      deployment.kubernetes.io/revision: "1"
+    creationTimestamp: "2022-01-05T04:27:06Z"
+    generation: 1
+    labels:
+      app: hr-web-app
+      pod-template-hash: 6f6fc9697
+    name: hr-web-app-6f6fc9697
+    namespace: default
+    ownerReferences:
+    - apiVersion: apps/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: Deployment
+      name: hr-web-app
+      uid: f87ba582-a0cb-441d-aa7a-c91ba7de36dc
+    resourceVersion: "102351"
+    uid: 49e01466-0d3b-4318-84d5-4a0224c9ac23
+  spec:
+    replicas: 2
+    selector:
+      matchLabels:
+        app: hr-web-app
+        pod-template-hash: 6f6fc9697
+    template:
+      metadata:
+        creationTimestamp: null
+        labels:
+          app: hr-web-app
+          pod-template-hash: 6f6fc9697
+      spec:
+        containers:
+        - image: nginx
+          imagePullPolicy: Always
+          name: nginx
+          resources: {}
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+        dnsPolicy: ClusterFirst
+        restartPolicy: Always
+        schedulerName: default-scheduler
+        securityContext: {}
+        terminationGracePeriodSeconds: 30
+  status:
+    availableReplicas: 2
+    fullyLabeledReplicas: 2
+    observedGeneration: 1
+    readyReplicas: 2
+    replicas: 2
+kind: List
+metadata:
+  resourceVersion: ""
+  selfLink: ""

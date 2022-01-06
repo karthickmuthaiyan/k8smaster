@@ -1,0 +1,25 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: super-user-pod
+spec:
+  securityContext:
+    runAsUser: 1000
+    runAsGroup: 3000
+    fsGroup: 2000
+  containers:
+  - image: busybox:1.28
+    name: super-user-pod
+    command: 
+    - sleep
+    - "4800"
+    securityContext:
+      capabilities:
+        add: ["SYS_TIME"]
+    volumeMounts:
+    - name: demo-dir
+      mountPath: /demo
+  volumes:
+  - name: demo-dir
+    emptyDir: {}
+

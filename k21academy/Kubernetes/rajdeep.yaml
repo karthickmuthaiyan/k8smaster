@@ -1,0 +1,10 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: rajdeep
+spec:
+  containers:
+  - name: mypod
+    image: docker.io/rajdeepdev98/ibm:myproj1
+    ports:
+    - containerPort: 8082

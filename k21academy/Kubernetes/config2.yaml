@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: myconfig1
+  namespace: default
+
+data:
+ date: 11-04-2021
+ hostname: config.server.com
+ HOME: data
+ dish: vadapav
+ env: k21
+ 

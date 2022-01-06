@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: prod
+  name: nginx-deployment
+  labels:
+    app: nginx
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.12
+        ports:
+        - containerPort: 80
+        env:
+        - name: date
+          valueFrom:
+            configMapKeyRef:
+              name: myconfig1
+              key: date
+        - name: hostname1
+          valueFrom:
+            configMapKeyRef:
+              name: myconfig1
+              key: hostname
+        - name: vegdish
+          valueFrom:
+            configMapKeyRef:
+              name: myconfig1
+              key: dish

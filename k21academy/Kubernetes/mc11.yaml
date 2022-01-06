@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: morethanonecontainer3
+spec:
+  containers:
+  - name: c1
+    image: nginx
+    ports:
+    - containerPort: 80
+      protocol: TCP
+    command: ["/bin/sh","-c","sleep 60m"]
+
+  - name: c2
+    image: alpine
+    command: ["/bin/sh","-c","sleep 60m"]
+
+  - name: c3
+    image:  php:apache
+    ports:
+    - containerPort: 8080
+      protocol: TCP
+    command: ["/bin/sh","-c","sleep 60m"]
+
+  - name: c4
+    image: ubuntu
+    command: ["/bin/sh","-c","sleep 60m"]

@@ -1,0 +1,16 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: mypod2
+spec:
+  containers:
+  - name: mypod2
+    image: nginx:1.15.5
+    volumeMounts:
+    - mountPath: "/data1"
+      name: myvolume
+  volumes:
+    - name: myvolume
+      hostPath: 
+        path: /data2
+        type: DirectoryOrCreate

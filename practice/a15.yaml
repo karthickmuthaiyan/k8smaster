@@ -1,0 +1,2 @@
+kubectl get nodes -o=jsonpath='{range .items[*]}{" Internal IP of "}{.metadata.name}{" "}{.status.addresses[?(@.type=="InternalIP")].address}{end}'
+

@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: non-root-pod
+spec:
+  securityContext:
+    runAsUser: 1000
+    fsGroup: 2000
+  containers:
+  - image: redis:alpine
+    name: redis 

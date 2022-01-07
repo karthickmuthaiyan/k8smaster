@@ -1,0 +1,12 @@
+# in /etc/kubernetes/manifests loc of node1 paste this 
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: nginx-critical
+  name: nginx-critical
+spec:
+  containers:
+  - image: nginx
+    name: nginx-critical
+

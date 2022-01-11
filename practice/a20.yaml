@@ -1,0 +1,13 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: nginx-demo
+  labels:
+    app: nginx
+spec:
+  containers:
+  - name: nginx-demo
+    image: nginx
+    env:
+    - name: USER_NAME
+      value: demouser

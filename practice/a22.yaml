@@ -1,0 +1,4 @@
+ 1611  kubectl run -it busybox --image=busybox -- sh
+ 1617  kubectl exec busybox -c busybox -i -t env
+ 1618  kubectl exec busybox -c busybox -i -t env >envpod
+

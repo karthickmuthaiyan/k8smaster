@@ -1,0 +1,9 @@
+apt install nfs-kernerl-server
+mkdir -p /nfs/share1
+chown nobody:nogroup /nfs/share1
+echo "/nfs/share1  *(rw,sync,no_root_squash,no_subtree_check)" >> /etc/exports
+systemctl restart nfs-kernel-server
+exportfs -a
+exportfs -v
+
+apt install nfs-common

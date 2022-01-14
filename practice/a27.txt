@@ -1,0 +1,2 @@
+kubectl set image deploy nginx-app nginx-container=nginx:1.13.0-alpine --record=true
+kubectl set image deploy nginx-app nginx-container=nginx:1.11.0-alpine --record=true

@@ -1,0 +1,5 @@
+NAME     CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS      CLAIM   STORAGECLASS   REASON   AGE
+nfs-pv   1Gi        RWX            Recycle          Available           manual                  21h
+pv1      100Mi      RWO            Retain           Available           manual                  16m
+pv3      150Mi      RWO            Retain           Available           manual                  15m
+pv2      200Mi      RWO            Retain           Available           manual                  16m

@@ -1,0 +1,21 @@
+kind: DaemonSet
+apiVersion: apps/v1
+metadata:
+  name: demo-daemonset
+spec:
+  selector:
+    matchLabels:
+      app: daemonset
+  template:
+    metadata:
+      name: daemonset-pod
+      labels:
+        app: daemonset
+    spec:
+      containers: 
+      - image: nginx
+        name: daemonset-container
+      tolerations:
+      - key: node-role.kubernetes.io/master
+        effect: NoSchedule 
+

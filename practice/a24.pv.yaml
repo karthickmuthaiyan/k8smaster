@@ -10,6 +10,7 @@ spec:
     storage: 1Gi
   accessModes:
   - ReadWriteMany
+  persistentVolumeReclaimPolicy: Recycle 
   nfs:
     server: master01
     path: /nfs/share1

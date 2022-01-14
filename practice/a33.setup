@@ -1,0 +1,1 @@
+kubectl drain node/worker02 --ignore-daemonsets --delete-emptydir-data

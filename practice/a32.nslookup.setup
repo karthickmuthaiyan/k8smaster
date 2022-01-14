@@ -1,0 +1,2 @@
+kubectl exec -it pod/nginx-random-77fb464776-bqv5r -- nslookup nginx-random
+kubectl exec -it pod/nginx-random-77fb464776-bqv5r -- nslookup 10.44.0.1

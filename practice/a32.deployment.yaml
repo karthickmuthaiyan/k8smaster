@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: nginx-random
+  name: nginx-random
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx-random
+  template:
+    metadata:
+      labels:
+        app: nginx-random
+    spec:
+      containers:
+      - image: nginx
+        name: nginx

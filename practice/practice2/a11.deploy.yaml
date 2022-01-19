@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: cka-deployment
+  name: cka-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: cka-deployment
+  template:
+    metadata:
+      labels:
+        app: cka-deployment
+    spec:
+      containers:
+      - image: nginx
+        name: nginx

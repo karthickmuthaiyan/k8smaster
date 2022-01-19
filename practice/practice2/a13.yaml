@@ -1,0 +1,20 @@
+kind: DaemonSet
+apiVersion: apps/v1
+metadata: 
+  name: cka-daemonset
+spec:
+  selector:
+    matchLabels:
+      app: ckads
+  template:
+    metadata:
+      name: nginx
+      labels:
+        app: ckads
+    spec:
+      containers:
+      - name: nginx
+        image: nginx
+      tolerations:
+      - key: "node-role.kubernetes.io/master"
+        effect: NoSchedule

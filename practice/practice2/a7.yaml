@@ -1,0 +1,15 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: demo-pod
+  namespace: qa
+spec:
+  containers:
+  - image: redis
+    name: demo-pod-c
+    volumeMounts:
+    - name: app-data
+      mountPath: /data/redis
+  volumes:
+  - name: app-data
+    emptyDir: {}

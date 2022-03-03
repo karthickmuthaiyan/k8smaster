@@ -1,0 +1,8 @@
+apiVersion: v1
+data:
+  app.env: |
+    system.type="TESTING CONFIGMAP"
+    system.number=12345
+kind: ConfigMap
+metadata:
+  name: app-basic-cm

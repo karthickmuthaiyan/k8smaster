@@ -1,0 +1,12 @@
+kind: PersistentVolume
+apiVersion: v1
+metadata: 
+  name: task-pv-volume
+spec:
+  storageClassName: manual
+  accessModes:
+  - ReadWriteMany
+  capacity:
+    storage: 10Gi
+  hostPath:
+    path: /mnt/data

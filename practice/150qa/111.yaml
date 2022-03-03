@@ -1,0 +1,19 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: nginx
+spec:
+  volumes:
+  - name: cmap-from-file
+    configMap:
+      name: keyvalcfgmap 
+      items:
+      - key: config.txt
+        path: env
+  containers:
+  - name: nginx
+    image: nginx
+    volumeMounts:
+    - name: cmap-from-file
+      mountPath: /tmp/efile
+

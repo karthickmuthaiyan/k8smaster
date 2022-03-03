@@ -1,0 +1,4 @@
+For CPU:
+k run -i --tty load-generator --image=busybox --rm --restart=Never -- /bin/sh -c "while sleep 0.01; do wget -q -O- http://hpa-demo-deployment ; done "
+For Memroy:
+ cat <(yes | tr \\n x | head -c $((1024*1024*100))) <(sleep 120) | grep n

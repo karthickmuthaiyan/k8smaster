@@ -1,0 +1,18 @@
+kind: CronJob
+apiVersion: batch/v1beta1
+metadata:
+  name: cronc
+spec:
+  schedule: "*/2 * * * * "
+  jobTemplate:
+    spec:
+      template:
+        metadata:
+          name: cronp
+        spec:
+          containers:
+          - name: cronc
+            image: busybox
+            command: ["/bin/sh","-c","date; echo 'Hello from k8s cluster'"]
+          restartPolicy: OnFailure
+

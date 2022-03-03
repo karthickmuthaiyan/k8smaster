@@ -1,0 +1,24 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: cm-multi-var-pod
+spec:
+  containers:
+  - name: nginx
+    image: nginx
+    env: 
+    - name: COLOR_R
+      valueFrom:
+        configMapKeyRef:
+          name: cm-multi-var
+          key: color1
+    - name: COLOR_B
+      valueFrom:
+        configMapKeyRef:
+          name: cm-multi-var
+          key: color2
+    - name: COLOR_G
+      valueFrom:
+        configMapKeyRef:
+          name: cm-multi-var
+          key: color3

@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-cm-pod
+spec:
+  containers:
+  - name: nginx
+    image: nginx
+    volumeMounts:
+    - name: nconf
+      mountPath: /etc/nginx/conf.d
+  volumes:
+  - name: nconf
+    configMap:
+      name: nginx-cm
+      items:
+      - key: nginx-custom-config.properties
+        path: default.conf  

@@ -1,0 +1,9 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: cm-multi-var
+data:
+  color1: red
+  color2: blue
+  color3: green
+

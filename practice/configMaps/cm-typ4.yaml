@@ -1,0 +1,10 @@
+apiVersion: v1
+data:
+  var.txt: |
+    color1=red
+    color2=blue
+    color3=green
+kind: ConfigMap
+metadata:
+  creationTimestamp: null
+  name: cm-from-file

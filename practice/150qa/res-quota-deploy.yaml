@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: res-quota-deploy
+  name: res-quota-deploy
+  namespace: quota-example
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: res-quota-deploy
+  template:
+    metadata:
+      labels:
+        app: res-quota-deploy
+    spec:
+      containers:
+      - image: nginx
+        name: nginx
+        resources:
+          limits:
+            cpu: 500m

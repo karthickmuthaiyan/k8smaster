@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: app-basic-cm
+  name: app-basic-cm-pod
+spec:
+  containers:
+  - command: ["sleep", "3000" ]
+    image: busybox
+    name: app-basic-cm-pod-c
+    volumeMounts:
+    - name: config-dir
+      mountPath: /etc/config
+  volumes:
+  - name: config-dir
+    configMap:
+      name: application-configs  
+     

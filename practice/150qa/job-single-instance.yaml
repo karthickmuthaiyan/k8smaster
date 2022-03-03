@@ -1,0 +1,15 @@
+kind: Job
+apiVersion: batch/v1
+metadata:
+  name: job-single-instance
+spec:
+  template:
+    metadata: 
+      name: kjob
+    spec:
+      containers:
+      - name: kjobc
+        image: busybox
+        command: ["/bin/sh","-c","echo 'This is just a test'"]
+      restartPolicy: OnFailure
+           

@@ -1,0 +1,17 @@
+kind: Job
+apiVersion: batch/v1
+metadata:
+  name: job-parallel-instance
+spec:
+  parallelism: 5
+  ttlSecondsAfterFinished: 60
+  template:
+    metadata: 
+      name: kjobp
+    spec:
+      containers:
+      - name: kjobpc
+        image: busybox
+        command: ["/bin/sh","-c","echo 'Running in parallel'; sleep $(shuf -i 5-10 -n 1)"]
+      restartPolicy: OnFailure
+

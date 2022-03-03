@@ -1,0 +1,1 @@
+k create cm cm-from-literal --from-literal=color1=red --from-literal=color2=blue  --dry-run=client -o yaml

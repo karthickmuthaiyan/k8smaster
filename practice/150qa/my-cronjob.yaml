@@ -1,0 +1,29 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: my-cronjob
+spec:
+  jobTemplate:
+    metadata:
+      name: my-cronjob
+    spec:
+      parallelism: 2
+      completions: 4
+      ttlSecondsAfterFinished: 180
+      activeDeadlineSeconds: 80
+      backoffLimit: 5
+      template:
+        metadata:
+          creationTimestamp: null
+        spec:
+          containers:
+          - command:
+            - /bin/sh
+            - -c
+            - sleep 5 ; echo 'sleeping 5 seconds'
+            image: busybox
+            name: my-cronjob
+            resources: {}
+          restartPolicy: OnFailure
+  schedule: '*/1 * * * *'
+status: {}
